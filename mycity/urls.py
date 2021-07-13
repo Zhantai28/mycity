@@ -17,12 +17,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from core.views import ProposalListAPIView
+from core.views import ProposalListAPIView, ProposalCreateAPIView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ProposalListAPIView.as_view(), name="proposal-list")
+    path('', ProposalListAPIView.as_view(), name="proposal-list"),
+    path('proposal/create/', ProposalCreateAPIView.as_view(), name="proposal-create"),
 ]
 
 
